@@ -9,7 +9,7 @@ SIMILARITY_THRESHOLD = 0.7
 FUZZY_THRESHOLD = 0.7
 
 app = Flask(__name__)
-model = SentenceTransformer("all-mpnet-base-v2")
+model = SentenceTransformer("all-MiniLM-L6-v2")
 fallback_log = {}
 current_stage = 1
 
