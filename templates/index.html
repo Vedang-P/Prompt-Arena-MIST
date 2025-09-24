@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Eldoria — Interactive Story</title>
+
+  <!-- correct static link using url_for (Jinja) -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Eldoria: Interactive Story</h1>
+    </header>
+
+    <div id="progress-wrap">
+      <div id="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+
+    <section id="clue-box" aria-live="polite">
+      <strong>Clue:</strong>
+      <div id="current-clue">{{ clue }}</div>
+    </section>
+
+    <section id="story-box" aria-live="polite"></section>
+
+    <div id="input-container">
+      <input id="user-input" type="text" placeholder="Type your response..." autocomplete="off" />
+      <button id="send-btn">Send</button>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
